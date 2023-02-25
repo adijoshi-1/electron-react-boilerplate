@@ -1,0 +1,55 @@
+{
+  "name": "electron-react-boiler-plate",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.0.3",
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "cross-env BROWSER=none react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "wait-on tcp:3000 && cross-env NODE_ENV=development electron .",
+    "dev": "concurrently \"npm:start\" \"npm:electron\"",
+    "deploy": "npm run build && npx electron-builder build",
+    "prettier": "prettier --write --config .prettierrc.json \"**/*.js\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "electron": "^23.1.1",
+    "electron-builder": "^23.6.0",
+    "eslint": "^8.34.0",
+    "prettier": "2.8.4",
+    "wait-on": "^7.0.1"
+  }
+}

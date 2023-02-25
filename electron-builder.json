@@ -1,0 +1,19 @@
+{
+  "appId": "com.example.myapp",
+  "directories": {
+    "output": "dist"
+  },
+  "files": ["build/**/*", "node_modules/**/*", "public/**/*", "electron.js"],
+  "publish": {
+    "provider": "github"
+  },
+  "win": {
+    "target": "portable"
+  },
+  "dmg": {
+    "title": "${productName} ${version}"
+  },
+  "linux": {
+    "target": ["AppImage", "deb"]
+  }
+}
